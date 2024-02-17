@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block navbar %}
+<a class="logo" href="/">Sheikh Sayed</a>         
+<ul class="nav">
+    <li class="item">
+        <a class="link" href="/" >Home</a>
+    </li>
+    <li class="item">
+        <a class="link" href="/#about">About</a>
+    </li>
+    <li class="item">
+        <a class="link" href="/#portfolio">Portfolio</a>
+    </li>
+    <li class="item">
+        <a class="link" href="/#testmonial">Testmonial</a>
+    </li>
+    <li class="item">
+        <a class="link" href="/#blog">Blog</a>
+    </li>
+    <li class="item">
+        <a class="link" href="/#contact">Contact</a>
+    </li>
+
+{% endblock navbar %}
+{% block content %}
+
+<div class="col-12">
+    <div class="card  m-5 "style="height:92.9vh">
+      <div class="card-body" style="margin:auto">
+
+        <video controls>
+            <source src="{{ projects.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h2 class="card-title">{{projects.title}}</h2>
+        <p>Category:
+            <button class='btn btn-warning btn-sm m-2'>{{projects.category.name}}</button>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+

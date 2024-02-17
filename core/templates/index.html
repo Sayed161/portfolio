@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -17,10 +18,11 @@
     <!-- Page Navbar -->
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
+            {% block navbar %}
             <a class="logo" href="#">Sheikh Sayed</a>         
             <ul class="nav">
                 <li class="item">
-                    <a class="link" href="#home">Home</a>
+                    <a class="link" href="#home" >Home</a>
                 </li>
                 <li class="item">
                     <a class="link" href="#about">About</a>
@@ -37,7 +39,7 @@
                 <li class="item">
                     <a class="link" href="#contact">Contact</a>
                 </li>
-                
+                {% endblock  %}
             </ul>
             <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
                 <div class="hamburger-box">
@@ -46,7 +48,7 @@
             </a>
         </div>          
     </nav><!-- End of Page Navbar -->
-
+    {% block content %}
     <!-- page header -->
     <header id="home" class="header">
         <div class="overlay"></div>
@@ -115,7 +117,7 @@
             <div class="row">
                 {% for pro in project %}
                 <div class="col-md-4">
-                    <a href="#" class="portfolio-card">
+                    <a href="{% url "detail" pro.pk %}" class="portfolio-card">
                         <img src={{pro.image.url}} class="portfolio-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">    
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
@@ -240,7 +242,7 @@
             </form><!-- end of contact form -->
         </div><!-- end of container -->
     </section><!-- end of contact section -->
-
+    {% endblock content %}
     <!-- footer -->
     <div class="container">
         <footer class="footer">       
